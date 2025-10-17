@@ -29,6 +29,11 @@ var (
 	weightSameArtist = flag.Float64("weight-same-artist", 15, "Weight of tracks by the same artist as the last song")
 	weightSameGenre  = flag.Float64("weight-same-genre", 10, "Weight of tracks in the same genre as the last song")
 
+	weightEarlyTrack    = flag.Float64("weight-early-track", 10, "Weight of tracks at positions 1-3")
+	weightMiddleTrack   = flag.Float64("weight-middle-track", 5, "Weight of tracks at positions 4-6")
+	weightLateTrack     = flag.Float64("weight-late-track", 1, "Weight of tracks at positions 7-10")
+	weightExtendedTrack = flag.Float64("weight-extended-track", 0.75, "Weight of tracks at positions 11+")
+
 	weightDuplicate = flag.Float64("weight-duplicate", 0, "Weight of tracks that are already in the playlist")
 )
 
@@ -93,7 +98,8 @@ func weight(selected []*subsonic.Child, averagePlayCount float64, lastSong, song
 	return ratingWeight(song) *
 		frequencyWeight(averagePlayCount, song) *
 		followerWeight(lastSong, song) *
-		duplicateWeight(selected, song)
+		duplicateWeight(selected, song) *
+		trackPositionWeight(song)
 }
 
 func ratingWeight(song *subsonic.Child) float64 {
@@ -145,4 +151,20 @@ func duplicateWeight(selected []*subsonic.Child, song *subsonic.Child) float64 {
 		}
 	}
 	return 1
+}
+
+func trackPositionWeight(song *subsonic.Child) float64 {
+	if song.Track == 0 {
+		// Missing track position, use neutral weight
+		return 1.0
+	} else if song.Track >= 1 && song.Track <= 3 {
+		return *weightEarlyTrack
+	} else if song.Track >= 4 && song.Track <= 6 {
+		return *weightMiddleTrack
+	} else if song.Track >= 7 && song.Track <= 10 {
+		return *weightLateTrack
+	} else {
+		// Track 11+
+		return *weightExtendedTrack
+	}
 }
