@@ -8,8 +8,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu7U=
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
-github.com/supersonic-app/go-subsonic v0.0.0-20260125165421-1efaa048a150 h1:Wh3EUdJI8bSr2nYtnkmG+bGNzEtGGSW3Rcg4eDM1a0M=
-github.com/supersonic-app/go-subsonic v0.0.0-20260125165421-1efaa048a150/go.mod h1:ClhAgC2qobwH19D6kdwULLYSHlOmldDGkdu2G2Z0Ijo=
+github.com/supersonic-app/go-subsonic v0.0.0-20260416152144-7a5f505a273c h1:wms3FvahSfcnacW2rs9L+vzJR8FmTE5xTrRgf3+k3eQ=
+github.com/supersonic-app/go-subsonic v0.0.0-20260416152144-7a5f505a273c/go.mod h1:ClhAgC2qobwH19D6kdwULLYSHlOmldDGkdu2G2Z0Ijo=
 golang.org/x/image v0.31.0 h1:mLChjE2MV6g1S7oqbXC0/UcKijjm5fnJLUYKIYrLESA=
 golang.org/x/image v0.31.0/go.mod h1:R9ec5Lcp96v9FTF+ajwaH3uGxPH4fKfHHAVbUILxghA=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
