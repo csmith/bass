@@ -8,4 +8,4 @@ require (
 	github.com/supersonic-app/go-subsonic v0.0.0-20260416152144-7a5f505a273c
 )
 
-require golang.org/x/image v0.31.0 // indirect
+require golang.org/x/image v0.43.0 // indirect
